@@ -8,14 +8,14 @@ public class Hitbox : MonoBehaviour
     public float Damage { get => damage; set => damage = value; }
 
     private PlayerMovement parentMovement;
-    private BoxCollider boxCollider;
+    private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         parentMovement = GetComponentInParent<PlayerMovement>();
-        boxCollider = GetComponent<BoxCollider>();
+        boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -25,10 +25,9 @@ public class Hitbox : MonoBehaviour
         if(parentMovement && (boxCollider.transform.localPosition.x >= 0 != parentMovement.FacingRight))
         {
             // Flip box collider
-            boxCollider.transform.localPosition = new Vector3(
+            boxCollider.transform.localPosition = new Vector2(
                 boxCollider.transform.localPosition.x * (-1f),
-                boxCollider.transform.localPosition.y,
-                boxCollider.transform.localPosition.z
+                boxCollider.transform.localPosition.y
             );
 
             spriteRenderer.flipX = !spriteRenderer.flipX;

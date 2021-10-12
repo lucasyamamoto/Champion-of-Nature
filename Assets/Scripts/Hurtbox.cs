@@ -18,7 +18,7 @@ public class Hurtbox : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // Check if this hurtbox collided with an hitbox
         Hitbox hitbox = other.gameObject.GetComponent<Hitbox>();
