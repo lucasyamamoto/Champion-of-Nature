@@ -669,6 +669,7 @@ MonoBehaviour:
   speed: 7
   zCompensation: 5
   jumpForce: 20
+  dashForce: 200
 --- !u!1 &1215522495
 GameObject:
   m_ObjectHideFlags: 0
