@@ -6,9 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public enum JumpState { OnGround, Jumping, Falling, DoubleJumping, DoubleJumpingFalling };
 
-    private Rigidbody rigidBody;
+    private Rigidbody2D rigidBody;
     [SerializeField] private float speed;
-    [SerializeField] private float zCompensation;   // Speed compensation on z-axis for camera angle
     [SerializeField] private float jumpForce;
     [SerializeField] private float dashForce;
     private JumpState jumpState;                    // Jump state machine to avoid infinite jumps
@@ -19,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody2D>();
         jumpState = JumpState.OnGround;
         facingRight = true;
     }
@@ -58,10 +57,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Walking movement
-        rigidBody.velocity = new Vector3(
+        rigidBody.velocity = new Vector2(
             Input.GetAxis("Horizontal") * speed, 
-            rigidBody.velocity.y, 
-            Input.GetAxis("Vertical") * speed * zCompensation
+            rigidBody.velocity.y
         );
         
         // Jumping movement
@@ -69,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Reset Y velocity and re-apply jump force
             //rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
-            rigidBody.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
+            rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
         /* For preview purposes only! Those below may change and/or be moved to a different component */
@@ -79,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         // Water skill (dash)
         if (Input.GetKeyDown(KeyCode.X) && jumpState == JumpState.OnGround)
         {
-            rigidBody.AddForce(new Vector3((float)System.Math.Ceiling(Input.GetAxis("Horizontal")) * dashForce, 0f, 0f), ForceMode.Impulse);
+            rigidBody.AddForce(new Vector2(Input.GetAxis("Horizontal") * dashForce, 0f), ForceMode2D.Impulse);
         }
 
         // Air skill (double jump)
@@ -87,8 +85,8 @@ public class PlayerMovement : MonoBehaviour
         {
             // Reset Y velocity and re-apply jump force
             jumpState = JumpState.DoubleJumping;
-            rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
-            rigidBody.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
+            rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
 }
