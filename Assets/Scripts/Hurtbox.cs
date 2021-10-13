@@ -25,7 +25,7 @@ public class Hurtbox : MonoBehaviour
         if(hitbox && character)
         {
             // Receive damage
-            print($"{this.transform.parent.name} got {hitbox.Damage} damage from {other.transform.parent.name}");
+            print($"{this.transform.parent.name} got {hitbox.Damage} damage");
             character.Health -= hitbox.Damage;
         }
     }
