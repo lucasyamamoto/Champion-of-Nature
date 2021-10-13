@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Firedart : MonoBehaviour
 {
-    [SerializeField] float delay;
+    [SerializeField] private float delay;
     Transform projectile;
     private bool isReady;
+    [SerializeField] private bool isEnemy;
 
     IEnumerator Shoot()
     {
@@ -32,7 +33,7 @@ public class Firedart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V) && isReady)
+        if (((Input.GetKeyDown(KeyCode.V) && !isEnemy) || (Input.GetKeyDown(KeyCode.N) && isEnemy)) && isReady)
         {
             StartCoroutine(Shoot());
         }

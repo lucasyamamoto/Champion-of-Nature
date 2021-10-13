@@ -35,7 +35,6 @@ public class Aquaslide : MonoBehaviour
         // Dash
         if (Input.GetKeyDown(KeyCode.X) && jumpMovement.OnGround())
         {
-            print("Dash" + (Input.GetAxis("Horizontal") * dashForce));
             StartCoroutine(Dash());
         }
     }
