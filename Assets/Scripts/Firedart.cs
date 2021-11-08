@@ -5,7 +5,7 @@ using UnityEngine;
 public class Firedart : MonoBehaviour
 {
     [SerializeField] private float delay;
-    Transform projectile;
+    [SerializeField] private GameObject projectile;
     private bool isReady;
     [SerializeField] private bool isEnemy;
 
@@ -13,7 +13,7 @@ public class Firedart : MonoBehaviour
     {
         isReady = false;
 
-        Transform newProjectile = Instantiate(projectile, projectile.position, projectile.rotation); ;
+        Transform newProjectile = Instantiate(projectile.transform, transform.position + projectile.transform.localPosition * transform.localScale.x, projectile.transform.rotation);
         newProjectile.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(delay);
@@ -26,7 +26,6 @@ public class Firedart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        projectile = transform.GetChild(2);
         isReady = true;
     }
 

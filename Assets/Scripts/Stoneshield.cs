@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Stoneshield : MonoBehaviour
 {
-    Transform shield;
+    [SerializeField] private GameObject shieldPrefab;
+    private GameObject shield;
 
     // Start is called before the first frame update
     void Start()
     {
-        shield = transform.GetChild(3);
+        shield = Instantiate(shieldPrefab, transform.position + shieldPrefab.transform.localPosition * transform.localScale.x, shieldPrefab.transform.rotation);
+        shield.transform.parent = this.transform;
     }
 
     // Update is called once per frame
