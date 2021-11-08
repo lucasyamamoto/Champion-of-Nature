@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Firedart : MonoBehaviour
+public class Firedart : CharacterSkill
 {
     [SerializeField] private float delay;
     [SerializeField] private GameObject projectile;
     private bool isReady;
     [SerializeField] private bool isEnemy;
+
+    private InputManager.KeyStatus currentInput;
+
+    public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
     IEnumerator Shoot()
     {
@@ -27,12 +31,13 @@ public class Firedart : MonoBehaviour
     void Start()
     {
         isReady = true;
+        currentInput = new InputManager.KeyStatus();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (((Input.GetKeyDown(KeyCode.V) && !isEnemy) || (Input.GetKeyDown(KeyCode.N) && isEnemy)) && isReady)
+        if (((currentInput.keyDown && !isEnemy) || (Input.GetKeyDown(KeyCode.N) && isEnemy)) && isReady)
         {
             StartCoroutine(Shoot());
         }
