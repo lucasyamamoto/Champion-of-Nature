@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rigidBody;
 
+    public float Speed { get => speed; set => speed = value; }
+
     // Start is called before the first frame update
     void Start()
     {
