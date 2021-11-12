@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
+    private SpriteRenderer spriteRenderer;
     private InputManager inputManager;
     private JumpMovement jumpMovement;
     [SerializeField] private float speed;
@@ -32,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         inputManager = GetComponent<InputManager>();
         jumpMovement = GetComponent<JumpMovement>();
         facingRight = true;
@@ -46,6 +48,7 @@ public class CharacterMovement : MonoBehaviour
             if (inputManager.HorizontalAxis() != 0f)
             {
                 facingRight = (inputManager.HorizontalAxis() > 0f);
+                spriteRenderer.flipX = !facingRight;
             }
 
             // Walking movement

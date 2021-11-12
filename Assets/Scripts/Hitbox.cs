@@ -11,6 +11,20 @@ public class Hitbox : MonoBehaviour
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
 
+    private void UpdateFacingDirection()
+    {
+        if (parentMovement && (boxCollider.transform.localPosition.x >= 0 != parentMovement.FacingRight))
+        {
+            // Flip box collider
+            boxCollider.transform.localPosition = new Vector2(
+                boxCollider.transform.localPosition.x * (-1f),
+                boxCollider.transform.localPosition.y
+            );
+
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +36,10 @@ public class Hitbox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(parentMovement && (boxCollider.transform.localPosition.x >= 0 != parentMovement.FacingRight))
-        {
-            // Flip box collider
-            boxCollider.transform.localPosition = new Vector2(
-                boxCollider.transform.localPosition.x * (-1f),
-                boxCollider.transform.localPosition.y
-            );
-
-            spriteRenderer.flipX = !spriteRenderer.flipX;
-        }
+        UpdateFacingDirection();
+    }
+    void OnEnable()
+    {
+        UpdateFacingDirection();
     }
 }
