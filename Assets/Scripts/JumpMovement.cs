@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class JumpMovement : MonoBehaviour
 {
     public enum JumpState { OnGround, Jumping, Falling, DoubleJumping, DoubleJumpingFalling };

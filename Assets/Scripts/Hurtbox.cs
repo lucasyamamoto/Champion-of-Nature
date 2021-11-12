@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Hurtbox : MonoBehaviour
 {
-    private Character character;
+    private CharacterHP characterHP;
 
     // Start is called before the first frame update
     void Start()
     {
-        character = GetComponentInParent<Character>();
+        characterHP = GetComponentInParent<CharacterHP>();
     }
 
     // Update is called once per frame
@@ -22,11 +22,11 @@ public class Hurtbox : MonoBehaviour
     {
         // Check if this hurtbox collided with an hitbox
         Hitbox hitbox = other.gameObject.GetComponent<Hitbox>();
-        if(hitbox && character)
+        if(hitbox && characterHP)
         {
             // Receive damage
             print($"{this.transform.parent.name} got {hitbox.Damage} damage");
-            character.Health -= hitbox.Damage;
+            characterHP.Health -= hitbox.Damage;
         }
     }
 }

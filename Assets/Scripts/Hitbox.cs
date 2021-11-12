@@ -7,14 +7,14 @@ public class Hitbox : MonoBehaviour
     [SerializeField] private float damage;
     public float Damage { get => damage; set => damage = value; }
 
-    private PlayerMovement parentMovement;
+    private CharacterMovement parentMovement;
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        parentMovement = GetComponentInParent<PlayerMovement>();
+        parentMovement = GetComponentInParent<CharacterMovement>();
         boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

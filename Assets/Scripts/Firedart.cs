@@ -2,19 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Firedart : MonoBehaviour
+[RequireComponent(typeof(CharacterMovement))]
+public class Firedart : CharacterSkill
 {
     [SerializeField] private float delay;
-    Transform projectile;
+    [SerializeField] private GameObject projectile;
+    private CharacterMovement characterMovement;
     private bool isReady;
-    [SerializeField] private bool isEnemy;
+
+    private InputManager.KeyStatus currentInput;
+
+    public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
     IEnumerator Shoot()
     {
         isReady = false;
 
-        Transform newProjectile = Instantiate(projectile, projectile.position, projectile.rotation); ;
-        newProjectile.gameObject.SetActive(true);
+        float direction = ((characterMovement.FacingRight) ? 1f : -1f);
+
+        Vector3 newProjectilePos = transform.position + projectile.transform.localPosition * transform.localScale.x * direction;
+
+        GameObject newProjectile = Instantiate(projectile, newProjectilePos, projectile.transform.rotation);
+        newProjectile.GetComponent<Projectile>().Speed *= direction;
+        newProjectile.SetActive(true);
 
         yield return new WaitForSecondsRealtime(delay);
 
@@ -26,14 +36,15 @@ public class Firedart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        projectile = transform.GetChild(2);
+        characterMovement = GetComponent<CharacterMovement>();
         isReady = true;
+        currentInput = new InputManager.KeyStatus();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (((Input.GetKeyDown(KeyCode.V) && !isEnemy) || (Input.GetKeyDown(KeyCode.N) && isEnemy)) && isReady)
+        if (currentInput.keyDown && isReady)
         {
             StartCoroutine(Shoot());
         }
