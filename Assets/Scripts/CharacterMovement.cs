@@ -48,7 +48,7 @@ public class CharacterMovement : MonoBehaviour
             if (inputManager.HorizontalAxis() != 0f)
             {
                 facingRight = (inputManager.HorizontalAxis() > 0f);
-                spriteRenderer.flipX = !facingRight;
+                transform.rotation = Quaternion.Euler(0f, (facingRight) ? 0f : 180f, 0f);
             }
 
             // Walking movement
