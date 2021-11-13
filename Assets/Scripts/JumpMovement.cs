@@ -22,6 +22,7 @@ public class JumpMovement : MonoBehaviour
         if (jumpState == JumpState.OnGround)
         {
             // Apply jump force
+            jumpState = JumpState.Jumping;
             rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
@@ -48,15 +49,7 @@ public class JumpMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Update jump state
-        if (rigidBody.velocity.y > 0f)
-        {
-            if (jumpState == JumpState.OnGround)
-            {
-                jumpState = JumpState.Jumping;
-            }
-        }
-        else if (rigidBody.velocity.y < 0f)
+        if (rigidBody.velocity.y < 0f)
         {
             if (jumpState == JumpState.Jumping)
             {
@@ -67,7 +60,7 @@ public class JumpMovement : MonoBehaviour
                 jumpState = JumpState.DoubleJumpingFalling;
             }
         }
-        else if (jumpState == JumpState.Falling || jumpState == JumpState.DoubleJumpingFalling)
+        else if (rigidBody.velocity.y == 0 && (jumpState == JumpState.Falling || jumpState == JumpState.DoubleJumpingFalling))
         {
             jumpState = JumpState.OnGround;
         }

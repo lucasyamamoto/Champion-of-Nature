@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator), typeof(CharacterMovement))]
 public class EldritchEdge : CharacterSkill
 {
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private GameObject swordParent;
     private Animator animator;
+    private CharacterMovement characterMovement;
     private GameObject sword;
     private InputManager.KeyStatus currentInput;
     [SerializeField] private bool showSword;
@@ -20,6 +21,7 @@ public class EldritchEdge : CharacterSkill
     void Start()
     {
         animator = GetComponent<Animator>();
+        characterMovement = GetComponent<CharacterMovement>();
         sword = Instantiate(swordPrefab, swordParent.transform.position, swordParent.transform.rotation);
         sword.transform.parent = swordParent.transform;
         sword.transform.localPosition = swordPrefab.transform.localPosition;
@@ -33,7 +35,10 @@ public class EldritchEdge : CharacterSkill
         if (currentInput.keyDown)
         {
             animator.SetTrigger("Attacking");
+            characterMovement.Block = true;
         }
         sword.SetActive(showSword);
+        characterMovement.Block = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Sword_Attack");
+        print(characterMovement.Block);
     }
 }
