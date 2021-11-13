@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(InputManager))]
 public class CharacterMovement : MonoBehaviour
@@ -9,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private InputManager inputManager;
     private JumpMovement jumpMovement;
+    private Animator animator;
     [SerializeField] private float speed;
     private bool facingRight;
     private bool blockMovement;
@@ -36,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         inputManager = GetComponent<InputManager>();
         jumpMovement = GetComponent<JumpMovement>();
+        animator = GetComponent<Animator>();
         facingRight = true;
     }
 
@@ -48,7 +51,21 @@ public class CharacterMovement : MonoBehaviour
             if (inputManager.HorizontalAxis() != 0f)
             {
                 facingRight = (inputManager.HorizontalAxis() > 0f);
-                spriteRenderer.flipX = !facingRight;
+                transform.rotation = Quaternion.Euler(0f, (facingRight) ? 0f : 180f, 0f);
+                if(Math.Abs(inputManager.HorizontalAxis()) == 1f)
+                {
+                    animator.SetBool("Running", true);
+                }
+                else
+                {
+                    animator.SetBool("Running", false);
+                    animator.SetBool("Walking", true);
+                }
+            }
+            else
+            {
+                animator.SetBool("Running", false);
+                animator.SetBool("Walking", false);
             }
 
             // Walking movement

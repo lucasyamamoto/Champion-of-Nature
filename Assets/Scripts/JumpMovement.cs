@@ -10,6 +10,7 @@ public class JumpMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     private JumpState jumpState;
     private Rigidbody2D rigidBody;
+    private Animator animator;
 
     public bool OnGround()
     {
@@ -22,6 +23,8 @@ public class JumpMovement : MonoBehaviour
         if (jumpState == JumpState.OnGround)
         {
             // Apply jump force
+            jumpState = JumpState.Jumping;
+            animator.SetTrigger("Jumping");
             rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
@@ -33,6 +36,8 @@ public class JumpMovement : MonoBehaviour
         {
             // Reset Y velocity and re-apply jump force
             jumpState = JumpState.DoubleJumping;
+            animator.SetBool("Falling", false);
+            animator.SetTrigger("Jumping");
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
             rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
@@ -43,33 +48,30 @@ public class JumpMovement : MonoBehaviour
     {
         jumpState = JumpState.OnGround;
         rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Update jump state
-        if (rigidBody.velocity.y > 0f)
-        {
-            if (jumpState == JumpState.OnGround)
-            {
-                jumpState = JumpState.Jumping;
-            }
-        }
-        else if (rigidBody.velocity.y < 0f)
+        if (rigidBody.velocity.y < 0f)
         {
             if (jumpState == JumpState.Jumping)
             {
                 jumpState = JumpState.Falling;
+                animator.SetBool("Falling", true);
             }
             else if (jumpState == JumpState.DoubleJumping)
             {
                 jumpState = JumpState.DoubleJumpingFalling;
+                animator.SetBool("DJFalling", true);
             }
         }
-        else if (jumpState == JumpState.Falling || jumpState == JumpState.DoubleJumpingFalling)
+        else if (rigidBody.velocity.y == 0 && (jumpState == JumpState.Falling || jumpState == JumpState.DoubleJumpingFalling))
         {
             jumpState = JumpState.OnGround;
+            animator.SetBool("Falling", false);
+            animator.SetBool("DJFalling", false);
         }
     }
 }
