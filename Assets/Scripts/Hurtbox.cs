@@ -4,18 +4,43 @@ using UnityEngine;
 
 public class Hurtbox : MonoBehaviour
 {
+    private Rigidbody2D rigidBody;
     private CharacterHP characterHP;
+    private Animator animator;
+    private CharacterMovement characterMovement;
+    [SerializeField] private float knockbackForce;
+    [SerializeField] private float knockbackTime;
+    private bool knockedBack;
+
+    IEnumerator Knockback()
+    {
+        characterMovement.Block = true;
+        animator.SetTrigger("Hit");
+        knockedBack = true;
+        yield return new WaitForSecondsRealtime(knockbackTime);
+
+        characterMovement.Block = false;
+        knockedBack = false;
+
+        yield return null;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        rigidBody = GetComponentInParent<Rigidbody2D>();
         characterHP = GetComponentInParent<CharacterHP>();
+        animator = GetComponentInParent<Animator>();
+        characterMovement = GetComponentInParent<CharacterMovement>();
+        knockedBack = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (knockedBack)
+        {
+            rigidBody.velocity = new Vector2(-knockbackForce, rigidBody.velocity.y);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -27,6 +52,7 @@ public class Hurtbox : MonoBehaviour
             // Receive damage
             print($"{this.transform.parent.name} got {hitbox.Damage} damage");
             characterHP.Health -= hitbox.Damage;
+            StartCoroutine(Knockback());
         }
     }
 }
