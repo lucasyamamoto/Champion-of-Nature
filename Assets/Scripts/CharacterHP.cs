@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterHP : MonoBehaviour
 {
     [SerializeField] private float health;
+    [SerializeField] private bool destroyOnDeath;
 
     public float Health
     {
@@ -14,7 +15,14 @@ public class CharacterHP : MonoBehaviour
             health = value;
             if (health <= 0)
             {
-                Destroy(gameObject);
+                if(destroyOnDeath)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
     }

@@ -70,7 +70,7 @@ public class CharacterMovement : MonoBehaviour
 
             // Walking movement
             rigidBody.velocity = new Vector2(
-                inputManager.HorizontalAxis() * speed, 
+                inputManager.HorizontalAxis() * speed,
                 rigidBody.velocity.y
             );
 
