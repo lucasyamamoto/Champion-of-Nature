@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 1215522498}
   - component: {fileID: 1215522497}
   - component: {fileID: 1215522496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 2132973552}
   - component: {fileID: 2132973553}
   - component: {fileID: 2132973556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StartWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,6 +1005,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7902810660097614577, guid: a8129bfbf602a0a449798fe2a44999c2, type: 3}
+      propertyPath: health
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9057267743803347779, guid: a8129bfbf602a0a449798fe2a44999c2, type: 3}
       propertyPath: m_Name
       value: EnemyCharacter1
