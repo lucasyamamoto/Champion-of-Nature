@@ -25,6 +25,10 @@ public abstract class InputManager : MonoBehaviour
         }
     }
 
+    [SerializeField] protected GameObject target;
+
+    public GameObject Target { get => target; set => target = value; }
+
     public abstract float HorizontalAxis();
     public abstract float VerticalAxis();
     public abstract KeyStatus Jump();

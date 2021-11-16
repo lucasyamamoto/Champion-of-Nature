@@ -14,8 +14,8 @@ TagManager:
   - PlayerAttack
   - EnemyAttack
   - AreaDelimiter
-  - 
-  - 
+  - PlayerCharacter
+  - EnemyCharacter
   - 
   - 
   - 
