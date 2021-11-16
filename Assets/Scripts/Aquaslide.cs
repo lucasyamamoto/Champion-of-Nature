@@ -7,6 +7,7 @@ public class Aquaslide : CharacterSkill
     private Rigidbody2D rigidBody;
     private JumpMovement jumpMovement;
     private CharacterMovement playerMovement;
+    private Animator animator;
     [SerializeField] private float dashForce;
     [SerializeField] private float dashDuration;
     private InputManager.KeyStatus currentInput;
@@ -15,10 +16,12 @@ public class Aquaslide : CharacterSkill
 
     IEnumerator Dash()
     {
+        animator.SetBool("Dashing", true);
         playerMovement.Speed += dashForce;
 
         yield return new WaitForSecondsRealtime(dashDuration);
 
+        animator.SetBool("Dashing", false);
         playerMovement.Speed -= dashForce;
 
         yield return null;
@@ -30,6 +33,7 @@ public class Aquaslide : CharacterSkill
         rigidBody = GetComponent<Rigidbody2D>();
         jumpMovement = GetComponent<JumpMovement>();
         playerMovement = GetComponent<CharacterMovement>();
+        animator = GetComponent<Animator>();
         currentInput = new InputManager.KeyStatus();
     }
 
