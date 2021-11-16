@@ -12,11 +12,9 @@ public class CharacterMovement : MonoBehaviour
     private JumpMovement jumpMovement;
     private Animator animator;
     [SerializeField] private float speed;
-    private bool facingRight;
     private bool blockMovement;
 
     public float Speed { get => speed; set => speed = value; }
-    public bool FacingRight { get => facingRight; }
     
     public bool Block
     {
@@ -39,7 +37,6 @@ public class CharacterMovement : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         jumpMovement = GetComponent<JumpMovement>();
         animator = GetComponent<Animator>();
-        facingRight = true;
     }
 
     // Update is called once per frame
@@ -50,8 +47,7 @@ public class CharacterMovement : MonoBehaviour
             // Update facing direction
             if (inputManager.HorizontalAxis() != 0f)
             {
-                facingRight = (inputManager.HorizontalAxis() > 0f);
-                transform.rotation = Quaternion.Euler(0f, (facingRight) ? 0f : 180f, 0f);
+                transform.rotation = Quaternion.Euler(0f, (inputManager.HorizontalAxis() > 0f) ? 0f : 180f, 0f);
                 if(Math.Abs(inputManager.HorizontalAxis()) == 1f)
                 {
                     animator.SetBool("Running", true);
@@ -78,6 +74,10 @@ public class CharacterMovement : MonoBehaviour
             {
                 jumpMovement.Jump();
             }
+        }
+        else
+        {
+            rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
         }
     }
 }

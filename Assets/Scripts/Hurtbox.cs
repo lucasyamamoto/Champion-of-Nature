@@ -39,7 +39,8 @@ public class Hurtbox : MonoBehaviour
     {
         if (knockedBack)
         {
-            rigidBody.velocity = new Vector2(-knockbackForce, rigidBody.velocity.y);
+            float direction = (transform.parent.rotation.y == 0f) ? -1 : 1;
+            rigidBody.velocity = new Vector2(knockbackForce * direction, rigidBody.velocity.y);
         }
     }
 
