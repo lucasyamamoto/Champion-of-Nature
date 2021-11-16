@@ -38,6 +38,7 @@ public class EldritchEdge : CharacterSkill
             characterMovement.Block = true;
         }
         sword.SetActive(showSword);
-        characterMovement.Block = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Sword_Attack");
+        characterMovement.Block = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Sword_Attack") || 
+                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Jump_Sword_Attack");
     }
 }

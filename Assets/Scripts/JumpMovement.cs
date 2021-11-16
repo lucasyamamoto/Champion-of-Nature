@@ -24,7 +24,7 @@ public class JumpMovement : MonoBehaviour
         {
             // Apply jump force
             jumpState = JumpState.Jumping;
-            animator.SetTrigger("Jumping");
+            animator.SetBool("Jumping", true);
             rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
@@ -37,7 +37,7 @@ public class JumpMovement : MonoBehaviour
             // Reset Y velocity and re-apply jump force
             jumpState = JumpState.DoubleJumping;
             animator.SetBool("Falling", false);
-            animator.SetTrigger("Jumping");
+            animator.SetBool("Jumping", true);
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0f);
             rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
@@ -60,11 +60,13 @@ public class JumpMovement : MonoBehaviour
             {
                 jumpState = JumpState.Falling;
                 animator.SetBool("Falling", true);
+                animator.SetBool("Jumping", false);
             }
             else if (jumpState == JumpState.DoubleJumping)
             {
                 jumpState = JumpState.DoubleJumpingFalling;
                 animator.SetBool("DJFalling", true);
+                animator.SetBool("Jumping", false);
             }
         }
         else if (rigidBody.velocity.y == 0 && (jumpState == JumpState.Falling || jumpState == JumpState.DoubleJumpingFalling))
