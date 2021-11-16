@@ -53,7 +53,10 @@ public class Hurtbox : MonoBehaviour
             // Receive damage
             print($"{this.transform.parent.name} got {hitbox.Damage} damage");
             characterHP.Health -= hitbox.Damage;
-            StartCoroutine(Knockback());
+            if (transform.parent.gameObject.activeSelf)
+            {
+                StartCoroutine(Knockback());
+            }
         }
     }
 }

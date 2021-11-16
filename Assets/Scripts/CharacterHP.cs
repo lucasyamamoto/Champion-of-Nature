@@ -15,13 +15,11 @@ public class CharacterHP : MonoBehaviour
             health = value;
             if (health <= 0)
             {
+                health = 0;
+                gameObject.SetActive(false);
                 if(destroyOnDeath)
                 {
                     Destroy(gameObject);
-                }
-                else
-                {
-                    gameObject.SetActive(false);
                 }
             }
         }
