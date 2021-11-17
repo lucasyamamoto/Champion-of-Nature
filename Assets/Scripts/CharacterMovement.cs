@@ -25,6 +25,8 @@ public class CharacterMovement : MonoBehaviour
             if(blockMovement)
             {
                 rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
+                animator.SetBool("Running", false);
+                animator.SetBool("Walking", false);
             }
         }
     }
@@ -78,6 +80,8 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
+            animator.SetBool("Running", false);
+            animator.SetBool("Walking", false);
         }
     }
 }

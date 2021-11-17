@@ -7,6 +7,7 @@ public class Stoneshield : CharacterSkill
     [SerializeField] private GameObject shieldPrefab;
     private GameObject shield;
     private CharacterMovement characterMovement;
+    private Animator animator;
     private InputManager.KeyStatus currentInput;
 
     public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
@@ -15,6 +16,7 @@ public class Stoneshield : CharacterSkill
     void Start()
     {
         characterMovement = GetComponent<CharacterMovement>();
+        animator = GetComponent<Animator>();
         shield = Instantiate(shieldPrefab, transform.position + shieldPrefab.transform.localPosition * transform.localScale.x, shieldPrefab.transform.rotation);
         shield.transform.parent = this.transform;
         currentInput = new InputManager.KeyStatus();
@@ -25,5 +27,6 @@ public class Stoneshield : CharacterSkill
     {
         shield.gameObject.SetActive(currentInput.key);
         characterMovement.Block = currentInput.key;
+        animator.SetBool("Shielding", currentInput.key);
     }
 }
