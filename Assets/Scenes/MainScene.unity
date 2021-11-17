@@ -887,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 2168805066722076493, guid: 3247457894d87444fad9957381beae83, type: 3}
       propertyPath: elementalSkill1
       value: 
-      objectReference: {fileID: 6544081041576285815}
+      objectReference: {fileID: 6544081041576285817}
     - target: {fileID: 2168805066722076494, guid: 3247457894d87444fad9957381beae83, type: 3}
       propertyPath: health
       value: 25
@@ -1251,15 +1251,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4956241896967052555, guid: 3247457894d87444fad9957381beae83, type: 3}
   m_PrefabInstance: {fileID: 2168805067998940024}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6544081041576285815 stripped
+--- !u!114 &6544081041576285817 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2168805066722076488, guid: 3247457894d87444fad9957381beae83, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2168805066722076489, guid: 3247457894d87444fad9957381beae83, type: 3}
   m_PrefabInstance: {fileID: 2168805067998940024}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6544081041576285811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 898650c4a694aae4db50e285d44b00ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 01584f91c9a724548a9710d8cefc86ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6721673774765080307
