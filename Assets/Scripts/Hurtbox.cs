@@ -57,7 +57,8 @@ public class Hurtbox : MonoBehaviour
             characterHP.Health -= hitbox.Damage;
             if (transform.parent.gameObject.activeSelf)
             {
-                knockRight = (transform.position.x <= other.transform.position.x);
+                float reference = (other.transform.parent) ? other.transform.parent.position.x : other.transform.position.x;
+                knockRight = (transform.position.x <= reference);
                 StartCoroutine(Knockback());
             }
         }
