@@ -16,6 +16,12 @@ public abstract class InputManager : MonoBehaviour
             key = false;
             keyUp = false;
         }
+        public KeyStatus(bool keyDown,bool key,bool keyUp)
+        {
+            this.keyDown = keyDown;
+            this.key = key;
+            this.keyUp = keyUp;
+        }
 
         public KeyStatus(string keyName)
         {
@@ -24,6 +30,10 @@ public abstract class InputManager : MonoBehaviour
             this.keyUp = Input.GetButtonUp(keyName);
         }
     }
+
+    [SerializeField] protected GameObject target;
+
+    public GameObject Target { get => target; set => target = value; }
 
     public abstract float HorizontalAxis();
     public abstract float VerticalAxis();

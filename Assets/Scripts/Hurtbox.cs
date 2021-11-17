@@ -11,6 +11,7 @@ public class Hurtbox : MonoBehaviour
     [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackTime;
     private bool knockedBack;
+    private bool knockRight;
 
     IEnumerator Knockback()
     {
@@ -33,13 +34,15 @@ public class Hurtbox : MonoBehaviour
         animator = GetComponentInParent<Animator>();
         characterMovement = GetComponentInParent<CharacterMovement>();
         knockedBack = false;
+        knockRight = true;
     }
 
     void FixedUpdate()
     {
         if (knockedBack)
         {
-            rigidBody.velocity = new Vector2(-knockbackForce, rigidBody.velocity.y);
+            float direction = (knockRight) ? -1 : 1;
+            rigidBody.velocity = new Vector2(knockbackForce * direction, rigidBody.velocity.y);
         }
     }
 
@@ -52,7 +55,12 @@ public class Hurtbox : MonoBehaviour
             // Receive damage
             print($"{this.transform.parent.name} got {hitbox.Damage} damage");
             characterHP.Health -= hitbox.Damage;
-            StartCoroutine(Knockback());
+            if (transform.parent.gameObject.activeSelf)
+            {
+                float reference = (other.transform.parent) ? other.transform.parent.position.x : other.transform.position.x;
+                knockRight = (transform.position.x <= reference);
+                StartCoroutine(Knockback());
+            }
         }
     }
 }

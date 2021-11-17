@@ -7,7 +7,6 @@ public class Firedart : CharacterSkill
 {
     [SerializeField] private float delay;
     [SerializeField] private GameObject projectile;
-    private CharacterMovement characterMovement;
     private bool isReady;
 
     private InputManager.KeyStatus currentInput;
@@ -18,7 +17,7 @@ public class Firedart : CharacterSkill
     {
         isReady = false;
 
-        float direction = ((characterMovement.FacingRight) ? 1f : -1f);
+        float direction = ((transform.rotation.y == 0f) ? 1f : -1f);
 
         Vector3 newProjectilePos = transform.position + projectile.transform.localPosition * transform.localScale.x * direction;
 
@@ -36,7 +35,6 @@ public class Firedart : CharacterSkill
     // Start is called before the first frame update
     void Start()
     {
-        characterMovement = GetComponent<CharacterMovement>();
         isReady = true;
         currentInput = new InputManager.KeyStatus();
     }

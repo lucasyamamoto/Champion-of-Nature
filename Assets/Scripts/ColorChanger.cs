@@ -11,7 +11,6 @@ public class ColorChanger : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        print(spriteRenderer.color);
         spriteRenderer.color = color;
     }
 
