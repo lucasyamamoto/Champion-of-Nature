@@ -1,22 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseSystem : MonoBehaviour
 {
     // Pause the game
     public void Pause()
     {
         Time.timeScale = 0f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Resume the game
     public void Resume()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    // Restart the game
+    public void Restart()
+    {
+        Application.LoadLevel(1);
+        Time.timeScale = 1f;
+    }
+
+    // Return to main menu
+    public void Quit()
+    {
+        Application.LoadLevel(0);
+        Time.timeScale = 1f;
     }
 
     // Start is called before the first frame update
