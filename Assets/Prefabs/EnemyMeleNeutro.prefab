@@ -21,6 +21,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2145917884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273702788211984738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192bd23645f85f443ae5b7021f47b1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordPrefab: {fileID: 3815639320791702914, guid: 4fefc35bd9613514f9af787475e706a0, type: 3}
+  swordParent: {fileID: 5273702788874871677}
+  showSword: 0
 --- !u!114 &722124929934447940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,14 +70,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5273702788211984738}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 261bd8a82ef2acd4cb75fbfec87038eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   basicAttack: {fileID: 2145917884}
-  elementalSkill1: {fileID: 0}
-  elementalSkill2: {fileID: 0}
+  elementalSkill1: {fileID: 3466276296958031712}
+  elementalSkill2: {fileID: 3466276296958031712}
 --- !u!114 &4575581325831913129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0.45490196, a: 1}
---- !u!114 &2145917884
+--- !u!114 &3466276296958031712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,12 +113,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5273702788211984738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192bd23645f85f443ae5b7021f47b1e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1034a5c981ad6c24c9e1a5a7c1f52b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordPrefab: {fileID: 0}
-  swordParent: {fileID: 0}
-  showSword: 0
 --- !u!1001 &1440812920915407679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: acf73e22570fd404682ef423f8479a2f, type: 2}
     - target: {fileID: 6544081042987842141, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Name
-      value: asdawEnemyCharacter2
+      value: EnemyMeleNeutro
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842141, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Layer
@@ -505,6 +517,11 @@ GameObject:
 --- !u!4 &5273702788211984735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6544081042987842144, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
+  m_PrefabInstance: {fileID: 1440812920915407679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5273702788874871677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6544081041553559618, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
   m_PrefabInstance: {fileID: 1440812920915407679}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6260096421613045280
