@@ -21,18 +21,21 @@ public class CharacterAttack : MonoBehaviour
     {
         if (inputManager.Attack().key)
         {
+            
             basicAttack.CurrentInput = inputManager.Attack();
             elementalSkill1.CurrentInput = new InputManager.KeyStatus();
             elementalSkill2.CurrentInput = new InputManager.KeyStatus();
         }
         else if (inputManager.ElementalSkill1().key)
         {
+            
             basicAttack.CurrentInput = new InputManager.KeyStatus();
             elementalSkill1.CurrentInput = inputManager.ElementalSkill1();
             elementalSkill2.CurrentInput = new InputManager.KeyStatus();
         }
         else
         {
+            
             basicAttack.CurrentInput = new InputManager.KeyStatus();
             elementalSkill1.CurrentInput = new InputManager.KeyStatus();
             elementalSkill2.CurrentInput = inputManager.ElementalSkill2();
