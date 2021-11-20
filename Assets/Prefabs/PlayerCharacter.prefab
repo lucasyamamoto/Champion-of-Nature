@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01584f91c9a724548a9710d8cefc86ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
+  delay: 2
   projectile: {fileID: 5017598712646948640, guid: 7901648daad2f4a4fab288399e552039, type: 3}
 --- !u!114 &4956241896967052596
 MonoBehaviour:

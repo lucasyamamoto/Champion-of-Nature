@@ -7,6 +7,7 @@ public class Firedart : CharacterSkill
 {
     [SerializeField] private float delay;
     [SerializeField] private GameObject projectile;
+    private Animator animator;
     private bool isReady;
 
     private InputManager.KeyStatus currentInput;
@@ -16,6 +17,7 @@ public class Firedart : CharacterSkill
     IEnumerator Shoot()
     {
         isReady = false;
+        animator.SetTrigger("Firedart");
 
         float direction = ((transform.rotation.y == 0f) ? 1f : -1f);
 
@@ -35,6 +37,7 @@ public class Firedart : CharacterSkill
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         isReady = true;
         currentInput = new InputManager.KeyStatus();
     }
