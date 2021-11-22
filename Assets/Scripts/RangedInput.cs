@@ -28,14 +28,10 @@ public class RangedInput : InputManager
     {
         if (Math.Abs(target.transform.position.x - transform.position.x) <= 9)
         {
-            
             return new KeyStatus(true, true, false);
-            
         }
-
         else
         {
-         
             return new KeyStatus(false, false, false);
         }
     }
