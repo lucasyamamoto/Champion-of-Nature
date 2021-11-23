@@ -23,7 +23,7 @@ public class Stoneshield : CharacterSkill
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         shield.gameObject.SetActive(currentInput.key);
         characterMovement.Block = currentInput.key;
