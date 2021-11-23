@@ -5,15 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Animator), typeof(CharacterMovement))]
 public class EldritchEdge : CharacterSkill
 {
-    [SerializeField] private GameObject swordPrefab;
-    [SerializeField] private GameObject swordParent;
+
     private Animator animator;
     private CharacterMovement characterMovement;
-    private GameObject sword;
     private InputManager.KeyStatus currentInput;
-    [SerializeField] private bool showSword;
-
-    public bool ShowSword { get => showSword; set => showSword = value; }
 
     public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
@@ -22,10 +17,6 @@ public class EldritchEdge : CharacterSkill
     {
         animator = GetComponent<Animator>();
         characterMovement = GetComponent<CharacterMovement>();
-        sword = Instantiate(swordPrefab, swordParent.transform.position, swordParent.transform.rotation);
-        sword.transform.parent = swordParent.transform;
-        sword.transform.localPosition = swordPrefab.transform.localPosition;
-        sword.transform.localRotation = swordPrefab.transform.localRotation;
         currentInput = new InputManager.KeyStatus();
     }
 
@@ -35,10 +26,7 @@ public class EldritchEdge : CharacterSkill
         if (currentInput.keyDown)
         {
             animator.SetTrigger("Attacking");
-            characterMovement.Block = true;
         }
-        sword.SetActive(showSword);
-        characterMovement.Block = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Sword_Attack") || 
-                                  animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Jump_Sword_Attack");
+        characterMovement.Block = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Sword_Attack");
     }
 }

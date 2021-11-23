@@ -8,6 +8,7 @@ public class Hurtbox : MonoBehaviour
     private CharacterHP characterHP;
     private Animator animator;
     private CharacterMovement characterMovement;
+    private CharacterAttack characterAttack;
     [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackTime;
     private bool knockedBack;
@@ -16,11 +17,15 @@ public class Hurtbox : MonoBehaviour
     IEnumerator Knockback()
     {
         characterMovement.Block = true;
+        characterAttack.Block = true;
+        
         animator.SetTrigger("Hit");
         knockedBack = true;
+
         yield return new WaitForSecondsRealtime(knockbackTime);
 
         characterMovement.Block = false;
+        characterAttack.Block = false;
         knockedBack = false;
 
         yield return null;
@@ -33,6 +38,7 @@ public class Hurtbox : MonoBehaviour
         characterHP = GetComponentInParent<CharacterHP>();
         animator = GetComponentInParent<Animator>();
         characterMovement = GetComponentInParent<CharacterMovement>();
+        characterAttack = GetComponentInParent<CharacterAttack>();
         knockedBack = false;
         knockRight = true;
     }

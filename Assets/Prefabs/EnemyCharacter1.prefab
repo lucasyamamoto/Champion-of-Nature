@@ -102,11 +102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041525353033, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98232496
+      value: 0.98232484
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041525353033, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.18718405
+      value: 0.18718408
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041553559617, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041635226890, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4824056
+      value: 0.48240566
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041635226890, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -126,11 +126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041965807811, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.91695225
+      value: 0.9169522
       objectReference: {fileID: 0}
     - target: {fileID: 6544081041965807811, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.39899704
+      value: -0.3989971
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042030426385, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -430,11 +430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598072373101368071, guid: 1052581f94649674e83dbca3001ae8a7, type: 3}
       propertyPath: knockbackTime
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3598072373101368071, guid: 1052581f94649674e83dbca3001ae8a7, type: 3}
       propertyPath: knockbackForce
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3598072373101368120, guid: 1052581f94649674e83dbca3001ae8a7, type: 3}
       propertyPath: m_Size.x

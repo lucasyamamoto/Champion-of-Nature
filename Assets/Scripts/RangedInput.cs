@@ -5,12 +5,25 @@ using System;
 
 public class RangedInput : InputManager
 {
+    [SerializeField] private float attackingDistance;
+    [SerializeField] private float fleeingDistance;
+
     public override float HorizontalAxis()
     {
-        if (Math.Abs(target.transform.position.x - transform.position.x) <= 9)
+        float distance = Math.Abs(target.transform.position.x - transform.position.x);
+
+        /*if (distance <= fleeingDistance)
+        {
+            return (target.transform.position.x <= transform.position.x) ? 0.5f : -0.5f;
+        }*/
+        if (distance <= attackingDistance)
+        {
             return 0f;
+        }
         else
+        {
             return (target.transform.position.x <= transform.position.x) ? -1f : 1f;
+        }
 
     }
 
@@ -26,13 +39,13 @@ public class RangedInput : InputManager
 
     public override KeyStatus Attack()
     {
-        if (Math.Abs(target.transform.position.x - transform.position.x) <= 9)
+        if (Math.Abs(target.transform.position.x - transform.position.x) <= attackingDistance)
         {
             return new KeyStatus(true, true, false);
         }
         else
         {
-            return new KeyStatus(false, false, false);
+            return new KeyStatus();
         }
     }
 
@@ -54,6 +67,6 @@ public class RangedInput : InputManager
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

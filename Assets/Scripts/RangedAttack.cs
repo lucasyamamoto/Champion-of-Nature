@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(CharacterMovement))]
-public class BowAttack : CharacterSkill
+public class RangedAttack : CharacterSkill
 {
     [SerializeField] private float delay;
     [SerializeField] private GameObject projectile;
