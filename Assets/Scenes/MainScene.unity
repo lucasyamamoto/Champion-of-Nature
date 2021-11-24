@@ -851,9 +851,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4654193679477119741, guid: 3b811ab07fa4fd94d8563a431985e5f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1f967132cb6998418c8ddb209853ab1, type: 3}
     - target: {fileID: 4654193680186608027, guid: 3b811ab07fa4fd94d8563a431985e5f5, type: 3}
       propertyPath: m_Name
-      value: PauseSystem
+      value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4654193680186608031, guid: 3b811ab07fa4fd94d8563a431985e5f5, type: 3}
       propertyPath: m_Pivot.x
@@ -937,6 +941,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654193680186608031, guid: 3b811ab07fa4fd94d8563a431985e5f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654193680354617719, guid: 3b811ab07fa4fd94d8563a431985e5f5, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
