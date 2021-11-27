@@ -24,7 +24,8 @@ public class Firedart : CharacterSkill
         characterMovement.Block = true;
 
         // Generate projectile
-        newProjectile = Instantiate((transform.rotation.y == 0f) ? projectile : projectileLeft, projectile.transform.position, projectile.transform.rotation);
+        GameObject baseObject = (transform.rotation.y == 0f) ? projectile : projectileLeft;
+        newProjectile = Instantiate(baseObject, baseObject.transform.position, baseObject.transform.rotation);
         newProjectile.SetActive(false);
 
         // Start animation
@@ -66,6 +67,7 @@ public class Firedart : CharacterSkill
         projectileLeft = Instantiate(projectile);
         projectileLeft.SetActive(false);
         projectileLeft.GetComponent<Projectile>().Speed *= -1f;
+        projectileLeft.transform.Rotate(0f, 0f, 180f);
     }
 
     // Update is called once per frame
