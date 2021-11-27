@@ -8,16 +8,39 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] private CharacterSkill basicAttack;
     [SerializeField] private CharacterSkill elementalSkill1;
     [SerializeField] private CharacterSkill elementalSkill2;
+    [SerializeField] private GameObject bracelet1;
+    [SerializeField] private GameObject bracelet2;
     private InputManager inputManager;
     private bool blockAttack;
 
     public bool Block { get => blockAttack; set => blockAttack = value; }
+
+    void ActivateBracelet1()
+    {
+        if (bracelet1)
+        {
+            bracelet1.GetComponent<SpriteRenderer>().color = elementalSkill1.BraceletColor;
+            bracelet1.SetActive(true);
+        }
+    }
+
+    void ActivateBracelet2()
+    {
+        if (bracelet2)
+        {
+            bracelet2.GetComponent<SpriteRenderer>().color = elementalSkill2.BraceletColor;
+            bracelet2.SetActive(true);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         inputManager = GetComponent<InputManager>();
         blockAttack = false;
+
+        ActivateBracelet1();
+        ActivateBracelet2();
     }
 
     // Update is called once per frame
