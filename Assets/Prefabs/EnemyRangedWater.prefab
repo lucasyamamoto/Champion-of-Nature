@@ -33,7 +33,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dff11bd961bf6f45855ddf0fc5c0eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 10
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
+  delay: 5
   projectile: {fileID: 2604824116589442297, guid: e650106e75e535b4187fe1e85e696f1c, type: 3}
   releaseProjectile: 0
 --- !u!114 &68738548652985641
@@ -65,6 +66,8 @@ MonoBehaviour:
   basicAttack: {fileID: 1554656151}
   elementalSkill1: {fileID: 7879145628649535150}
   elementalSkill2: {fileID: 7879145628649535150}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &3359990293184491392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1034a5c981ad6c24c9e1a5a7c1f52b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7879145629379756085
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,11 @@ public class RangedInput : InputManager
         {
             return (target.transform.position.x <= transform.position.x) ? 0.5f : -0.5f;
         }*/
-        if (distance <= attackingDistance)
+        if ((target.transform.position.x - transform.position.x > 0) ^ (transform.rotation.y == 0f))
+        {
+            return (target.transform.position.x <= transform.position.x) ? -0.1f : 0.1f;
+        }
+        else if (distance <= attackingDistance)
         {
             return 0f;
         }

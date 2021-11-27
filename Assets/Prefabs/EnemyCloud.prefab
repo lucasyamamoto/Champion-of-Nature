@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2604824116589442297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.401086, z: 0}
+  m_LocalPosition: {x: 0, y: 3.401086, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1569744683490705575}
@@ -155,6 +155,8 @@ MonoBehaviour:
   basicAttack: {fileID: 2604824116589442291}
   elementalSkill1: {fileID: 2604824116589442289}
   elementalSkill2: {fileID: 2604824116589442289}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &2604824116589442289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1034a5c981ad6c24c9e1a5a7c1f52b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &2604824116589442290
 Animator:
   serializedVersion: 3
@@ -198,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192bd23645f85f443ae5b7021f47b1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2781079094138751551
 MonoBehaviour:
   m_ObjectHideFlags: 0

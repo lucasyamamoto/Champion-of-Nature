@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Animator), typeof(CharacterMovement))]
 public class RangedAttack : CharacterSkill
@@ -24,7 +25,8 @@ public class RangedAttack : CharacterSkill
         characterMovement.Block = true;
 
         // Generate projectile
-        newProjectile = Instantiate((transform.rotation.y == 0f) ? projectile : projectileLeft, projectile.transform.position, projectile.transform.rotation);
+        GameObject baseObject = (transform.rotation.y == 0f) ? projectile : projectileLeft;
+        newProjectile = Instantiate(baseObject, baseObject.transform.position, baseObject.transform.rotation);
         newProjectile.SetActive(false);
 
         // Start animation
@@ -41,7 +43,7 @@ public class RangedAttack : CharacterSkill
     {
         // Update projectile direction
         float direction = ((transform.rotation.y == 0f) ? 1f : -1f);
-        newProjectile.transform.position = transform.position + projectile.transform.localPosition * transform.localScale.x * direction;
+        newProjectile.transform.position = transform.position + newProjectile.transform.localPosition * transform.localScale.x * direction;
 
         // Activate projectile
         newProjectile.SetActive(true);
@@ -66,6 +68,12 @@ public class RangedAttack : CharacterSkill
         projectileLeft = Instantiate(projectile);
         projectileLeft.SetActive(false);
         projectileLeft.GetComponent<Projectile>().Speed *= -1f;
+        projectileLeft.transform.Rotate(0f, 0f, 180f);
+        projectileLeft.transform.position = new Vector3(
+            projectileLeft.transform.position.x, 
+            -projectileLeft.transform.position.y,
+            projectileLeft.transform.position.z
+        );
     }
 
     // Update is called once per frame
