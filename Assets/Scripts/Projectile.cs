@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float maxDuration;
+    [SerializeField] private float upForce;
     private Rigidbody2D rigidBody;
 
     public float Speed { get => speed; set => speed = value; }
@@ -23,7 +24,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        rigidBody.velocity = new Vector2(speed, 0f);
+        rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
+        rigidBody.AddForce(new Vector2(0f, upForce), ForceMode2D.Impulse);
         StartCoroutine(LifeSpan());
     }
 

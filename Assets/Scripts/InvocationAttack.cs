@@ -25,7 +25,8 @@ public class InvocationAttack : CharacterSkill
         characterMovement.Block = true;
 
         // Generate projectile
-        newProjectile = Instantiate((transform.rotation.y == 0f) ? projectileRight : projectileLeft, projectile.transform.position, projectile.transform.rotation);
+        GameObject baseObject = (transform.rotation.y == 0f) ? projectileRight : projectileLeft;
+        newProjectile = Instantiate(baseObject, baseObject.transform.position, baseObject.transform.rotation);
         newProjectile.SetActive(false);
 
         // Start animation
@@ -42,7 +43,7 @@ public class InvocationAttack : CharacterSkill
     {
         // Update projectile direction
         float direction = ((transform.rotation.y == 0f) ? 1f : -1f);
-        newProjectile.transform.position = transform.position + projectile.transform.localPosition * transform.localScale.x * direction;
+        newProjectile.transform.position = transform.position + newProjectile.transform.localPosition * transform.localScale.x;
 
         // Activate projectile
         newProjectile.SetActive(true);
@@ -68,10 +69,17 @@ public class InvocationAttack : CharacterSkill
         projectileRight.SetActive(false);
         projectileRight.GetComponent<InputManager>().Target = GetComponent<InputManager>().Target;
 
-
         // Generate left version of projectile
         projectileLeft = Instantiate(projectileRight);
+        projectileLeft.SetActive(false);
+        projectileLeft.GetComponent<InputManager>().Target = GetComponent<InputManager>().Target;
         projectileLeft.GetComponent<Projectile>().Speed *= -1f;
+        projectileLeft.transform.Rotate(0f, 180f, 0f);
+        projectileLeft.transform.position = new Vector3(
+            projectileLeft.transform.position.x,
+            -projectileLeft.transform.position.y,
+            projectileLeft.transform.position.z
+        );
     }
 
     // Update is called once per frame
