@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3975941460550304661}
   - component: {fileID: 1710942633677688066}
   - component: {fileID: 8904408901202407867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StoneShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
