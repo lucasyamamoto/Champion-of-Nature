@@ -21,19 +21,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2019504109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9057267743803347779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6eaa4cf30d9cd49b0d3175db09f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0.45490196, a: 1}
 --- !u!114 &713942429153383766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +62,8 @@ MonoBehaviour:
   basicAttack: {fileID: 0}
   elementalSkill1: {fileID: 0}
   elementalSkill2: {fileID: 0}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &7902810660097614577
 MonoBehaviour:
   m_ObjectHideFlags: 0

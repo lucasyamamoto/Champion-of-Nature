@@ -63,6 +63,8 @@ MonoBehaviour:
   basicAttack: {fileID: 0}
   elementalSkill1: {fileID: 0}
   elementalSkill2: {fileID: 0}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &4575581326756970691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,19 +78,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &8973130421227728758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477739404093567370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6eaa4cf30d9cd49b0d3175db09f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0.45490196, a: 1}
 --- !u!1001 &1832654218462789320
 PrefabInstance:
   m_ObjectHideFlags: 0

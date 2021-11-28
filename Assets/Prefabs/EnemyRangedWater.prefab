@@ -109,19 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   braceletColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &7879145629379756085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2778277502105442015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6eaa4cf30d9cd49b0d3175db09f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0.2901961, g: 0.7882353, b: 1, a: 1}
 --- !u!1001 &238615426045642101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,15 +508,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.7882353
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.2901961
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842147, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Bounds.m_Center.x

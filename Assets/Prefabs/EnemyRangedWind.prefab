@@ -21,19 +21,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &728269852685882895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712996128222715285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6eaa4cf30d9cd49b0d3175db09f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
 --- !u!114 &728269853682856036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +33,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc56b10450aba942a4ac26fb8517599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
   delay: 3
   projectile: {fileID: 1698830215428417972, guid: 8fe490660fc94f54e85de8f79c2773f1, type: 3}
   releaseProjectile: 0
@@ -76,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1034a5c981ad6c24c9e1a5a7c1f52b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5090994499388502380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +80,8 @@ MonoBehaviour:
   basicAttack: {fileID: 728269853682856036}
   elementalSkill1: {fileID: 728269854331461780}
   elementalSkill2: {fileID: 728269854331461780}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &5323846264514869690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,15 +354,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842147, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Bounds.m_Center.x

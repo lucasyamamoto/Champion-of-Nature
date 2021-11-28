@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192bd23645f85f443ae5b7021f47b1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1236971467871935488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1034a5c981ad6c24c9e1a5a7c1f52b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3475507359171294847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +91,8 @@ MonoBehaviour:
   basicAttack: {fileID: 2145917884}
   elementalSkill1: {fileID: 3466276296958031712}
   elementalSkill2: {fileID: 3466276296958031712}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &4575581325831913129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,19 +106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &8973130422457864476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5273702788211984738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6eaa4cf30d9cd49b0d3175db09f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0.45490196, a: 1}
 --- !u!1001 &464808150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 6544081042987842140, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: acf73e22570fd404682ef423f8479a2f, type: 2}
+      objectReference: {fileID: 9100000, guid: 79ea1475b9bda3846bd075b3e1f9b64d, type: 2}
     - target: {fileID: 6544081042987842141, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Name
       value: EnemyMeleNeutro
@@ -477,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.45490196
       objectReference: {fileID: 0}
     - target: {fileID: 6544081042987842145, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Color.g

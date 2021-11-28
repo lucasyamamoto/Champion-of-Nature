@@ -753,7 +753,6 @@ GameObject:
   - component: {fileID: 4380100016941856587}
   - component: {fileID: 1340979517007828450}
   - component: {fileID: 2150711514714447156}
-  - component: {fileID: 5865183901321181783}
   - component: {fileID: 5865183900170787900}
   - component: {fileID: 5865183900170787891}
   - component: {fileID: 5865183900060093644}
@@ -826,7 +825,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9216f432d3fd0384c95e1a3cfba5826d, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.41568628, b: 0.0627451, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1000,19 +999,8 @@ MonoBehaviour:
   basicAttack: {fileID: 5865183900170787900}
   elementalSkill1: {fileID: 5865183900060093644}
   elementalSkill2: {fileID: 5865183900060093644}
---- !u!114 &5865183901321181783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7221943457766025562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6eaa4cf30d9cd49b0d3175db09f81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.41568628, b: 0.0627451, a: 1}
+  bracelet1: {fileID: 0}
+  bracelet2: {fileID: 0}
 --- !u!114 &5865183900170787900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,6 +1013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc56b10450aba942a4ac26fb8517599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
   delay: 3
   projectile: {fileID: 1205315540806682155, guid: 05d07c0c6b5ae444d9b74e3967faf911, type: 3}
   releaseProjectile: 0
@@ -1055,6 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1034a5c981ad6c24c9e1a5a7c1f52b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7424758314282402544
 GameObject:
   m_ObjectHideFlags: 0
