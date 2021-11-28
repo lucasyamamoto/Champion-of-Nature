@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stoneshield : CharacterSkill
+public class EnemyShield : CharacterSkill
 {
     [SerializeField] private GameObject shieldPrefab;
     private GameObject shieldRight;
@@ -23,7 +23,7 @@ public class Stoneshield : CharacterSkill
         shieldRight.transform.parent = this.transform;
 
         Vector3 leftPosition = transform.position + shieldPrefab.transform.localPosition * transform.localScale.x;
-        leftPosition.y -= 2 * shieldPrefab.transform.localPosition.y;
+        leftPosition.x -= 2 * shieldPrefab.transform.localPosition.x * transform.localScale.x;
         shieldLeft = Instantiate(shieldPrefab, leftPosition, shieldPrefab.transform.rotation);
         shieldLeft.SetActive(false);
         shieldLeft.transform.Rotate(0f, 180f, 0f);

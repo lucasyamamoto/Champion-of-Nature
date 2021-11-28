@@ -48,21 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   braceletColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &1783762179021138977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297954442389218928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea1fa0ae9e083843bbb7e48e0ce5b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  attackingDistance: 2.5
-  delay: 2
 --- !u!114 &2863876742963326725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,10 +87,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicAttack: {fileID: 1783762178816592400}
-  elementalSkill1: {fileID: 2944120147943745228}
+  elementalSkill1: {fileID: 5568679315036524766}
   elementalSkill2: {fileID: 2944120147943745228}
   bracelet1: {fileID: 0}
   bracelet2: {fileID: 0}
+--- !u!114 &5568679315036524766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297954442389218928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960001563ea70f44fb841c5bec276278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  braceletColor: {r: 0, g: 0, b: 0, a: 0}
+  shieldPrefab: {fileID: 1696477941119098519, guid: 94793dcc489573c40899f268e21df543, type: 3}
+--- !u!114 &1487730669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297954442389218928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d9396267abe9547aeb105e7be77746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  attackingDistance: 2.5
+  delay: 0.75
+  cycleDuration: 1
 --- !u!1001 &988517285534342189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,7 +355,7 @@ PrefabInstance:
     - target: {fileID: 6544081042987842140, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 79ea1475b9bda3846bd075b3e1f9b64d, type: 2}
+      objectReference: {fileID: 9100000, guid: ab40d4dd8af87834ba99825890b1cd22, type: 2}
     - target: {fileID: 6544081042987842141, guid: 7d20824c9a9cbc8488374fe9730aa41e, type: 3}
       propertyPath: m_Name
       value: EnemyMeleeEarth
