@@ -20,6 +20,7 @@ public class BossTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("Boss activated");
         boss.SetActive(true);
         Destroy(gameObject);
     }

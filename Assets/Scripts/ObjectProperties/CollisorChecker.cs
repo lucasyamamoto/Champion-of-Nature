@@ -25,6 +25,11 @@ public class CollisorChecker : MonoBehaviour
         collided = true;
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        collided = true;
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         collided = false;
@@ -32,13 +37,16 @@ public class CollisorChecker : MonoBehaviour
 
     void OnTriggerEnter2D(Collision2D collision)
     {
-        print("Collided");
+        collided = true;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         collided = true;
     }
 
     void OnTriggerExit2D(Collision2D collision)
     {
-        print("Finished colliding");
         collided = false;
     }
 }
