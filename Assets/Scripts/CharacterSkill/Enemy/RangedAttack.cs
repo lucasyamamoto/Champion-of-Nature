@@ -6,26 +6,30 @@ using System;
 [RequireComponent(typeof(Animator), typeof(CharacterMovement))]
 public class RangedAttack : CharacterSkill
 {
-    [SerializeField] private float delay;
-    [SerializeField] private GameObject projectile;
-    private Animator animator;
-    private CharacterMovement characterMovement;
-    private GameObject projectileLeft;
-    private GameObject newProjectile;
-    private bool isReady;
+    [SerializeField] protected float delay;
+    [SerializeField] protected GameObject projectile;
+    protected Animator animator;
+    protected CharacterMovement characterMovement;
+    protected GameObject projectileLeft;
+    protected GameObject newProjectile;
+    protected bool isReady;
     public bool releaseProjectile;
 
-    private InputManager.KeyStatus currentInput;
+    protected InputManager.KeyStatus currentInput;
 
     public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
-    IEnumerator Shoot()
+    protected IEnumerator Shoot()
     {
         isReady = false;
         characterMovement.Block = true;
 
         // Generate projectile
         GameObject baseObject = (transform.rotation.y == 0f) ? projectile : projectileLeft;
+        if(newProjectile)
+        {
+            Destroy(newProjectile);
+        }
         newProjectile = Instantiate(baseObject, baseObject.transform.position, baseObject.transform.rotation);
         newProjectile.SetActive(false);
 
@@ -39,7 +43,7 @@ public class RangedAttack : CharacterSkill
         yield return null;
     }
 
-    void ReleaseProjectile()
+    protected virtual void ReleaseProjectile()
     {
         // Update projectile direction
         float direction = ((transform.rotation.y == 0f) ? 1f : -1f);

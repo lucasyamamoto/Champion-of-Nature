@@ -3,43 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(CharacterMovement))]
-public class InvocationAttack : CharacterSkill
+public class InvocationAttack : RangedAttack
 {
-    [SerializeField] private float delay;
-    [SerializeField] private GameObject projectile;
-    private Animator animator;
-    private CharacterMovement characterMovement;
     private GameObject projectileRight;
-    private GameObject projectileLeft;
-    private GameObject newProjectile;
-    private bool isReady;
-    public bool releaseProjectile;
-
-    private InputManager.KeyStatus currentInput;
 
     public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
-    IEnumerator Shoot()
-    {
-        isReady = false;
-        characterMovement.Block = true;
-
-        // Generate projectile
-        GameObject baseObject = (transform.rotation.y == 0f) ? projectileRight : projectileLeft;
-        newProjectile = Instantiate(baseObject, baseObject.transform.position, baseObject.transform.rotation);
-        newProjectile.SetActive(false);
-
-        // Start animation
-        animator.SetTrigger("Attacking");
-
-        yield return new WaitForSecondsRealtime(delay);
-
-        isReady = true;
-
-        yield return null;
-    }
-
-    void ReleaseProjectile()
+    override protected void ReleaseProjectile()
     {
         // Update projectile direction
         float direction = ((transform.rotation.y == 0f) ? 1f : -1f);
