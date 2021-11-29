@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseSystem : MonoBehaviour
 {
@@ -19,14 +20,14 @@ public class PauseSystem : MonoBehaviour
     // Restart the game
     public void Restart()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
 
     // Return to main menu
     public void Quit()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1f;
     }
 
