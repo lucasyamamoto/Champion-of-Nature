@@ -9,15 +9,25 @@ public class Hurtbox : MonoBehaviour
     private Animator animator;
     private CharacterMovement characterMovement;
     private CharacterAttack characterAttack;
+    private BossAttack bossAttack;
     [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackTime;
+    [SerializeField] private float superKnockbackMultiplicator;
     private bool knockedBack;
     private bool knockRight;
+    private bool superKnockback;
 
     IEnumerator Knockback()
     {
         characterMovement.Block = true;
-        characterAttack.Block = true;
+        if (characterAttack)
+        {
+            characterAttack.Block = true;
+        }
+        else if (bossAttack)
+        {
+            bossAttack.Block = true;
+        }
         
         animator.SetTrigger("Hit");
         knockedBack = true;
@@ -25,8 +35,48 @@ public class Hurtbox : MonoBehaviour
         yield return new WaitForSecondsRealtime(knockbackTime);
 
         characterMovement.Block = false;
-        characterAttack.Block = false;
+        if (characterAttack)
+        {
+            characterAttack.Block = false;
+        }
+        else if (bossAttack)
+        {
+            bossAttack.Block = false;
+        }
         knockedBack = false;
+
+        yield return null;
+    }
+
+    IEnumerator SuperKnockback()
+    {
+        characterMovement.Block = true;
+        if (characterAttack)
+        {
+            characterAttack.Block = true;
+        }
+        else if (bossAttack)
+        {
+            bossAttack.Block = true;
+        }
+
+        animator.SetTrigger("Hit");
+        knockedBack = true;
+        superKnockback = true;
+
+        yield return new WaitForSecondsRealtime(knockbackTime);
+
+        characterMovement.Block = false;
+        if (characterAttack)
+        {
+            characterAttack.Block = false;
+        }
+        else if (bossAttack)
+        {
+            bossAttack.Block = false;
+        }
+        knockedBack = false;
+        superKnockback = false;
 
         yield return null;
     }
@@ -39,8 +89,10 @@ public class Hurtbox : MonoBehaviour
         animator = GetComponentInParent<Animator>();
         characterMovement = GetComponentInParent<CharacterMovement>();
         characterAttack = GetComponentInParent<CharacterAttack>();
+        bossAttack = GetComponentInParent<BossAttack>();
         knockedBack = false;
         knockRight = true;
+        superKnockback = false;
     }
 
     void FixedUpdate()
@@ -48,6 +100,10 @@ public class Hurtbox : MonoBehaviour
         if (knockedBack)
         {
             float direction = (knockRight) ? -1 : 1;
+            if(superKnockback)
+            {
+                direction *= superKnockbackMultiplicator;
+            }
             rigidBody.velocity = new Vector2(knockbackForce * direction, rigidBody.velocity.y);
         }
     }
@@ -56,7 +112,7 @@ public class Hurtbox : MonoBehaviour
     {
         // Check if this hurtbox collided with an hitbox
         Hitbox hitbox = other.gameObject.GetComponent<Hitbox>();
-        if(hitbox && characterHP)
+        if(hitbox && characterHP && !superKnockback)
         {
             // Receive damage
             print($"{this.transform.parent.name} got {hitbox.Damage} damage");
@@ -66,6 +122,16 @@ public class Hurtbox : MonoBehaviour
                 float reference = (other.transform.parent) ? other.transform.parent.position.x : other.transform.position.x;
                 knockRight = (transform.position.x <= reference);
                 StartCoroutine(Knockback());
+            }
+        }
+        else
+        {
+            Knockback knockComponent = other.gameObject.GetComponent<Knockback>();
+            if (knockComponent && transform.parent.gameObject.activeSelf)
+            {
+                float reference = (other.transform.parent) ? other.transform.parent.position.x : other.transform.position.x;
+                knockRight = (transform.position.x <= reference);
+                StartCoroutine(SuperKnockback());
             }
         }
     }
