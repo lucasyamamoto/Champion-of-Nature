@@ -20,32 +20,32 @@ public class CollisorChecker : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         collided = true;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         collided = true;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
         collided = false;
     }
 
-    void OnTriggerEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         collided = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         collided = true;
     }
 
-    void OnTriggerExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         collided = false;
     }
