@@ -43,7 +43,6 @@ public class InvocationAttack : RangedAttack
         projectileLeft = Instantiate(projectileRight);
         projectileLeft.SetActive(false);
         projectileLeft.GetComponent<InputManager>().Target = GetComponent<InputManager>().Target;
-        projectileLeft.GetComponent<Projectile>().Speed *= -1f;
         projectileLeft.transform.Rotate(0f, 180f, 0f);
         projectileLeft.transform.position = new Vector3(
             projectileLeft.transform.position.x,
