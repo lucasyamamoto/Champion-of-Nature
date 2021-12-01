@@ -8,7 +8,7 @@ public class MenuSystem : MonoBehaviour
     // Start the game
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainScene");
     }
 
     // Show the game options
@@ -20,9 +20,9 @@ public class MenuSystem : MonoBehaviour
     // Return to main menu or close the game
     public void Quit()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("MainMenu");
             Time.timeScale = 1f;
         }
         else
@@ -54,7 +54,7 @@ public class MenuSystem : MonoBehaviour
     // Restart the game
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainScene");
         Time.timeScale = 1f;
     }
 
