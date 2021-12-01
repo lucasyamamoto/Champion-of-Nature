@@ -1154,7 +1154,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BEGIN
+  m_Text: Start
 --- !u!222 &1047309696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1176,7 +1176,7 @@ GameObject:
   - component: {fileID: 1278423267}
   - component: {fileID: 1278423266}
   m_Layer: 5
-  m_Name: BeginButton
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,7 +1200,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -90, y: 30}
-  m_SizeDelta: {x: 234, y: 100}
+  m_SizeDelta: {x: 159, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1278423266
 MonoBehaviour:
@@ -1386,6 +1386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1459016061}
+  SoundOn: {fileID: 0}
+  SoundOff: {fileID: 0}
 --- !u!114 &1459016061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1633,7 +1635,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RETURN
+  m_Text: Return
 --- !u!222 &1634366554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1986,7 +1988,7 @@ PrefabInstance:
     - target: {fileID: 2549836172158386359, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1475932185}
     - target: {fileID: 2549836172158386359, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2145,7 +2147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504498537740788165, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_Name
-      value: MainButtons
+      value: Buttons
       objectReference: {fileID: 0}
     - target: {fileID: 5504498537740788165, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_IsActive
@@ -2153,7 +2155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5978556466161160040, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_Name
-      value: Menus
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5978556466161160040, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_IsActive
@@ -2366,7 +2368,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 90, y: 30}
-  m_SizeDelta: {x: 314, y: 100}
+  m_SizeDelta: {x: 226, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2050660668
 MonoBehaviour:

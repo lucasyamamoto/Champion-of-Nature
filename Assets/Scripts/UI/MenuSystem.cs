@@ -8,48 +8,21 @@ public class MenuSystem : MonoBehaviour
     // Start the game
     public void Play()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    // Return to main menu or close the game
+    // Close the game
     public void Quit()
     {
-        if (SceneManager.GetActiveScene().name == "MainScene")
-        {
-            SceneManager.LoadScene("MainMenu");
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            /*
-            // In Unity Editor
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-            */
+        /*
+        // In Unity Editor
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        */
 
-            // In real game
-            Application.Quit();
-        }
-    }
-
-    // Pause the game
-    public void Pause()
-    {
-        Time.timeScale = 0f;
-    }
-
-    // Resume the game
-    public void Resume()
-    {
-        Time.timeScale = 1f;
-    }
-
-    // Restart the game
-    public void Restart()
-    {
-        SceneManager.LoadScene("MainScene");
-        Time.timeScale = 1f;
+        // In real game
+        Application.Quit();
     }
 
     // Start is called before the first frame update
