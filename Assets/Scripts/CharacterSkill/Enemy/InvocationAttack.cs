@@ -9,6 +9,30 @@ public class InvocationAttack : RangedAttack
 
     public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
+    override protected IEnumerator Shoot()
+    {
+        isReady = false;
+        characterMovement.Block = true;
+
+        // Generate projectile
+        GameObject baseObject = (transform.rotation.y == 0f) ? projectileRight : projectileLeft;
+        if (newProjectile)
+        {
+            Destroy(newProjectile);
+        }
+        newProjectile = Instantiate(baseObject, baseObject.transform.position, baseObject.transform.rotation);
+        newProjectile.SetActive(false);
+
+        // Start animation
+        animator.SetTrigger("Attacking");
+
+        yield return new WaitForSecondsRealtime(delay);
+
+        isReady = true;
+
+        yield return null;
+    }
+
     override protected void ReleaseProjectile()
     {
         // Update projectile direction
@@ -44,11 +68,6 @@ public class InvocationAttack : RangedAttack
         projectileLeft.SetActive(false);
         projectileLeft.GetComponent<InputManager>().Target = GetComponent<InputManager>().Target;
         projectileLeft.transform.Rotate(0f, 180f, 0f);
-        projectileLeft.transform.position = new Vector3(
-            projectileLeft.transform.position.x,
-            -projectileLeft.transform.position.y,
-            projectileLeft.transform.position.z
-        );
     }
 
     // Update is called once per frame

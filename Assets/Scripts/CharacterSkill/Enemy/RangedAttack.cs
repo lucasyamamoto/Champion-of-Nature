@@ -19,7 +19,7 @@ public class RangedAttack : CharacterSkill
 
     public override InputManager.KeyStatus CurrentInput { get => currentInput; set => currentInput = value; }
 
-    protected IEnumerator Shoot()
+    protected virtual IEnumerator Shoot()
     {
         isReady = false;
         characterMovement.Block = true;
