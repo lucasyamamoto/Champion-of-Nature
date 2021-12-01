@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -552,8 +552,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23.2}
-  m_SizeDelta: {x: 200, y: 55.4}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 138, y: 56}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &506271526
 MonoBehaviour:
@@ -845,10 +845,10 @@ RectTransform:
   m_Father: {fileID: 609724274}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &902822445
 GameObject:
@@ -1059,8 +1059,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -20}
-  m_SizeDelta: {x: 270, y: 52.6}
+  m_AnchoredPosition: {x: -100, y: -25}
+  m_SizeDelta: {x: 60, y: 56}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1378710081
 MonoBehaviour:
@@ -1265,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1847247169999059452, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 213
+      value: 316
       objectReference: {fileID: 0}
     - target: {fileID: 1993139420493893322, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_Name
@@ -1509,7 +1509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6069351447667354068, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 233
+      value: 343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339797558086915218, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6436077846893806394, guid: 3ea3d1f58c9fc6640a2742982df82a4c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1651,8 +1655,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 95}
-  m_SizeDelta: {x: 302, y: 56}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 444, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420287630
 MonoBehaviour:
@@ -1676,11 +1680,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 75
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
