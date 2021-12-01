@@ -11,12 +11,6 @@ public class MenuSystem : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    // Show the game options
-    public void Options()
-    {
-        
-    }
-
     // Return to main menu or close the game
     public void Quit()
     {
