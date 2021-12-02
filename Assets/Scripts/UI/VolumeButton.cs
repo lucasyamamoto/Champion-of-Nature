@@ -7,6 +7,7 @@ public class VolumeButton : MonoBehaviour
 {
     [SerializeField] Image SoundOn;
     [SerializeField] Image SoundOff;
+    [SerializeField] VolumeManager volumeManager;
     private bool isMute = false;
     public bool IsMute
     {
@@ -35,7 +36,7 @@ public class VolumeButton : MonoBehaviour
         }
         else
         {
-            AudioListener.volume = 1;
+            AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
         }
         
     }
@@ -68,7 +69,7 @@ public class VolumeButton : MonoBehaviour
             isMute = false; 
             SoundOff.enabled = false;
             SoundOn.enabled = true;
-            AudioListener.volume = 1;
+            AudioListener.volume = volumeManager.Volume;
         }
         Save();
 

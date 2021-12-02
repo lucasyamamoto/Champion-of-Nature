@@ -613,17 +613,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 805373189330298826, guid: e89489f5cb4c4b543aa5975eeb961855, type: 3}
   m_PrefabInstance: {fileID: 8103738557478580160}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &426167148 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8413463932263245377, guid: e89489f5cb4c4b543aa5975eeb961855, type: 3}
-  m_PrefabInstance: {fileID: 8103738557478580160}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426167147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363a8e3d884f67f4aae32e8012536552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &479479451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7653944829265784629, guid: eda1f1b30f5c20d44b476b872d546ec6, type: 3}
@@ -772,7 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHP: {fileID: 2168805067998940025}
-  bossHP: {fileID: 426167148}
   menu: {fileID: 629285478}
   resumeButton: {fileID: 1915783413}
   gameOver: {fileID: 888031607}
@@ -2136,7 +2124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389231317010016247, guid: da2ed7c85bc5a6d42b7fb1e4faa9d58d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5389231317010016248, guid: da2ed7c85bc5a6d42b7fb1e4faa9d58d, type: 3}
       propertyPath: m_RootOrder

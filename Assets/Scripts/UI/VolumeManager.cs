@@ -7,7 +7,12 @@ public class VolumeManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     [SerializeField] VolumeButton volumeButton;
-    
+
+    public float Volume
+    {
+        get { return volumeSlider.value; }
+        }
+
     // Start is called before the first frame update
     void Start()
     {
