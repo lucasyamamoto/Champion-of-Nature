@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 1698830215428417928}
   - component: {fileID: 1698830215428417934}
   - component: {fileID: 1698830215428417935}
+  - component: {fileID: 4402856206227838286}
   m_Layer: 7
   m_Name: EnemyAirball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1698830215428417931
 Transform:
   m_ObjectHideFlags: 0
@@ -161,3 +162,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &4402856206227838286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698830215428417972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e550104aa3a47409408f325aafd560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: f5a4d6c6c77b58f44804af932e11fbd4, type: 3}
+  playOnEnable: 1
+  playOnDisable: 0
