@@ -8,7 +8,13 @@ public class VolumeButton : MonoBehaviour
     [SerializeField] Image SoundOn;
     [SerializeField] Image SoundOff;
     private bool isMute = false;
-
+    public bool IsMute
+    {
+        get
+        {
+            return isMute;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

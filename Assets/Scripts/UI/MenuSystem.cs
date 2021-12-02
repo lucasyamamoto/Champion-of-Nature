@@ -8,12 +8,14 @@ using UnityEngine.SceneManagement;
 public class MenuSystem : MonoBehaviour
 {
     [SerializeField] private Toggle aquaslide, stoneshield, firedart, windstep;
-
+    [SerializeField] private SkillObserver skillObserver;
     // Start the game
     public void Play()
     {
-        if (Convert.ToByte(aquaslide.isOn) + Convert.ToByte(stoneshield.isOn) + Convert.ToByte(firedart.isOn) + Convert.ToByte(windstep.isOn) == 2)
+        if (Convert.ToByte(aquaslide.isOn) + Convert.ToByte(stoneshield.isOn) + Convert.ToByte(firedart.isOn) + Convert.ToByte(windstep.isOn) == 2){
+            skillObserver.SkillSetter();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     // Close the game
