@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2050,6 +2050,7 @@ RectTransform:
   - {fileID: 1459016059}
   - {fileID: 1795394413}
   - {fileID: 443502367}
+  - {fileID: 1860889611}
   m_Father: {fileID: 662979551}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2443,7 +2444,6 @@ RectTransform:
   m_Children:
   - {fileID: 757819441}
   - {fileID: 662979551}
-  - {fileID: 1860889611}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3581,12 +3581,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860889610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1475932184}
-  m_RootOrder: 2
+  m_Father: {fileID: 1435670260}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3605,8 +3605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6663b3edc47bde148a34bb81650f4b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 0}
-  volumeButton: {fileID: 0}
+  volumeSlider: {fileID: 1459016061}
+  volumeButton: {fileID: 443502368}
 --- !u!1 &1914456531
 GameObject:
   m_ObjectHideFlags: 0
