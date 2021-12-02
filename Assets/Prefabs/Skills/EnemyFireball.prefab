@@ -174,6 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e550104aa3a47409408f325aafd560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: f01585c0632c3bc45a08d9a78500aaeb, type: 3}
+  audioClip: {fileID: 8300000, guid: d7ce52c87346aca41b1195ab41acdcc8, type: 3}
   playOnEnable: 1
   playOnDisable: 0

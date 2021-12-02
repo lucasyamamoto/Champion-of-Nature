@@ -1979,70 +1979,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2168805066722076493, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: elementalSkill1
-      value: 
-      objectReference: {fileID: 6544081041576285818}
-    - target: {fileID: 4956241895037476423, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.978805
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895037476423, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.20479427
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895095503693, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9309293
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895095503693, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.3651995
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895441018228, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.98844856
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895441018228, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.15155655
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895471041823, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.32158893
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895499134743, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70974183
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895499134743, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.704462
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895552063768, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.4181484
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895572187662, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.18749715
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241895911333781, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9525103
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241896593664274, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9770556
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241896593664274, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.21298465
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956241896836066145, guid: 3247457894d87444fad9957381beae83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.8358578
-      objectReference: {fileID: 0}
     - target: {fileID: 4956241896967052555, guid: 3247457894d87444fad9957381beae83, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2287,17 +2223,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4956241896967052555, guid: 3247457894d87444fad9957381beae83, type: 3}
   m_PrefabInstance: {fileID: 2168805067998940024}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6544081041576285818 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2168805066722076491, guid: 3247457894d87444fad9957381beae83, type: 3}
-  m_PrefabInstance: {fileID: 2168805067998940024}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6544081041576285811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df90ae78f32fc8c4ca74979594738a78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6721673774765080307
 PrefabInstance:
   m_ObjectHideFlags: 0

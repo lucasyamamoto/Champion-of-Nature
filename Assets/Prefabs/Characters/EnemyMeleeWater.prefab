@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463967634}
   - component: {fileID: 1463967635}
+  - component: {fileID: 7165640484662898708}
   m_Layer: 0
   m_Name: Whirlwind
   m_TagString: Untagged
@@ -82,6 +83,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7165640484662898708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463967633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e550104aa3a47409408f325aafd560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 7c8f4cd01297bbb47856fe14ec1eb600, type: 3}
+  playOnEnable: 1
+  playOnDisable: 0
 --- !u!50 &2720578297964758920
 Rigidbody2D:
   serializedVersion: 4
