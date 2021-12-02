@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 1205315540806682135}
   - component: {fileID: 1205315540806682129}
   - component: {fileID: 1205315540806682128}
+  - component: {fileID: -4416488605789567288}
   m_Layer: 7
   m_Name: EnemyRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1205315540806682132
 Transform:
   m_ObjectHideFlags: 0
@@ -161,3 +162,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &-4416488605789567288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205315540806682155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e550104aa3a47409408f325aafd560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 9d2d97bb2eb69f1499ec7afaef035a5e, type: 3}
+  playOnEnable: 0
+  playOnDisable: 1

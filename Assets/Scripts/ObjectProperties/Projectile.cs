@@ -37,9 +37,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Hurtbox>() || collision.GetComponent<Shield>())
+        if (collision.GetComponent<Hurtbox>() || collision.GetComponent<Shield>() || collision.transform.name == "Ground")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject, 4f);
         }
     }
 }

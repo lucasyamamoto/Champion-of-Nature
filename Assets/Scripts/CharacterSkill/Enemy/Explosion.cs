@@ -39,13 +39,10 @@ public class Explosion : CharacterSkill
         }
         else if (attackStage == 2)
         {
+            gameObject.SetActive(false);
             if (destroyOnExplosion)
             {
-                Destroy(gameObject);
-            }
-            else
-            {
-                gameObject.SetActive(false);
+                Destroy(gameObject, 5f);
             }
         }
     }
