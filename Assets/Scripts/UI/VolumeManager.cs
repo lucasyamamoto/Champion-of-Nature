@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class VolumeManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
+    [SerializeField] VolumeButton volumeButton;
     
     // Start is called before the first frame update
     void Start()
@@ -23,13 +24,21 @@ public class VolumeManager : MonoBehaviour
     // Update is called once per frame
     public void ChangeVolume()
     {
-        AudioListener.volume = volumeSlider.value;
+        if (!volumeButton.IsMute)
+            AudioListener.volume = volumeSlider.value;
         Save();
     }
 
     private void Load()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        
+        if(volumeButton && volumeButton.IsMute ){
+
+            volumeSlider.value = 0;
+        }
+         else if(volumeSlider){
+            volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        }
     }
 
     private void Save()
