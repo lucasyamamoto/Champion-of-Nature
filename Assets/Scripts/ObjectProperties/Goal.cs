@@ -18,6 +18,6 @@ public class Goal : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("You reached the goal!");
+        print("You reached the goal!"); // abrir tela de vitoria
     }
 }
