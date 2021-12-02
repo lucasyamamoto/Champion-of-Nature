@@ -110,7 +110,6 @@ public class Hurtbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print($"{this.transform.parent.name} collided with {other.transform.name} damage");
         // Check if this hurtbox collided with an hitbox
         Hitbox hitbox = other.gameObject.GetComponent<Hitbox>();
         if(hitbox && characterHP && !superKnockback)
