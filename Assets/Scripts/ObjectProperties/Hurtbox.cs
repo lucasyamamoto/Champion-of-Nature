@@ -10,9 +10,11 @@ public class Hurtbox : MonoBehaviour
     private CharacterMovement characterMovement;
     private CharacterAttack characterAttack;
     private BossAttack bossAttack;
+    [SerializeField] private Score score;
     [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackTime;
     [SerializeField] private float superKnockbackMultiplicator;
+    [SerializeField] private bool isPlayer;
     private bool knockedBack;
     private bool knockRight;
     private bool superKnockback;
@@ -117,6 +119,15 @@ public class Hurtbox : MonoBehaviour
             // Receive damage
             print($"{this.transform.parent.name} got {hitbox.Damage} damage");
             characterHP.Health -= hitbox.Damage;
+            if (isPlayer)
+            {
+                score.DecreaseGain();
+            }
+            else
+            {
+                score.AddScore();
+            }
+
             if (transform.parent.gameObject.activeSelf)
             {
                 float reference = (other.transform.parent) ? other.transform.parent.position.x : other.transform.position.x;
