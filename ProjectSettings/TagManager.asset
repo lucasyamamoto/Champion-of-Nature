@@ -16,8 +16,8 @@ TagManager:
   - AreaDelimiter
   - PlayerCharacter
   - EnemyCharacter
-  - 
-  - 
+  - GameTrigger
+  - Ground
   - 
   - 
   - 

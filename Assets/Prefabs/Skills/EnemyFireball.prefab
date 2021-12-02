@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 8488472667980638274}
   - component: {fileID: 8488472667980638276}
   - component: {fileID: 8488472667980638277}
+  - component: {fileID: 1857658119522367214}
   m_Layer: 7
   m_Name: EnemyFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8488472667980638273
 Transform:
   m_ObjectHideFlags: 0
@@ -161,3 +162,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &1857658119522367214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488472667980638334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e550104aa3a47409408f325aafd560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: f01585c0632c3bc45a08d9a78500aaeb, type: 3}
+  playOnEnable: 1
+  playOnDisable: 0
