@@ -8,6 +8,7 @@ public class VolumeButton : MonoBehaviour
     [SerializeField] Image SoundOn;
     [SerializeField] Image SoundOff;
     private bool isMute = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +17,12 @@ public class VolumeButton : MonoBehaviour
             PlayerPrefs.SetInt("isMute", 0);
             Load();
         }
-        else{
+        else
+        {
             Load();
         }
         UpdateButtonIcon();
+
         if (isMute)
         {
             AudioListener.volume = 0;
@@ -30,6 +33,7 @@ public class VolumeButton : MonoBehaviour
         }
         
     }
+
     private void UpdateButtonIcon()
     {
         if (isMute)
@@ -43,7 +47,9 @@ public class VolumeButton : MonoBehaviour
             SoundOff.enabled = false;
         }
     }
-    public void OnButtonPress(){
+
+    public void OnButtonPress()
+    {
         if (isMute == false)
         {
             isMute = true;
@@ -61,15 +67,20 @@ public class VolumeButton : MonoBehaviour
         Save();
 
     }
+
     // Update is called once per frame
     void Update()
     {
         
     }
-    private void Load(){
-    isMute = PlayerPrefs.GetInt("isMute") == 1;
+    
+    private void Load()
+    {
+        isMute = PlayerPrefs.GetInt("isMute") == 1;
     }
-    private void Save(){
+
+    private void Save()
+    {
         PlayerPrefs.SetInt("isMute", isMute ? 1 : 0);
     }
 }
