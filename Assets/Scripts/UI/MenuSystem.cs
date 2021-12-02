@@ -1,14 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour
 {
+    [SerializeField] private Toggle aquaslide, stoneshield, firedart, windstep;
+
     // Start the game
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (Convert.ToByte(aquaslide.isOn) + Convert.ToByte(stoneshield.isOn) + Convert.ToByte(firedart.isOn) + Convert.ToByte(windstep.isOn) == 2)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Close the game
