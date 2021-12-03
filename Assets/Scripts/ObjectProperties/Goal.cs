@@ -9,6 +9,20 @@ public class Goal : MonoBehaviour
     [SerializeField] private GameObject menu, resumeButton, gameOver;
     public AudioClip track;
     public AudioSource song;
+
+    // Show win menu
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        resumeButton.SetActive(false);
+        message.color = new Color(0, 0, 127);
+        message.text = "CONGRATULATIONS";
+        song.Stop();
+        song.clip = track;
+        Time.timeScale = 0f;
+        song.Play();
+        menu.SetActive(true);
+        gameOver.SetActive(true);
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -20,18 +34,5 @@ public class Goal : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Time.timeScale = 0f;
-        resumeButton.SetActive(false);
-        message.color = new Color(0, 0, 127);
-        message.text = "CONGRATULATIONS";
-        song.Stop();
-        song.clip = track;
-        song.Play();
-        menu.SetActive(true);
-        gameOver.SetActive(true);
     }
 }

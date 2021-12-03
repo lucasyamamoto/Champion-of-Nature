@@ -70,6 +70,7 @@ public class MonologueManager : MonoBehaviour
         printImage();
     }
 
+    // Print a image
     private void printImage()
     {
         if (indexMonologue >= 4 && indexMonologue <= 8)
