@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -325,15 +325,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869027552963985102, guid: f7a3f32c8f64f8641861a4b6f78cae63, type: 3}
       propertyPath: m_Color.b
-      value: 0.13725491
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6869027552963985102, guid: f7a3f32c8f64f8641861a4b6f78cae63, type: 3}
       propertyPath: m_Color.g
-      value: 0.02745098
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6869027552963985102, guid: f7a3f32c8f64f8641861a4b6f78cae63, type: 3}
       propertyPath: m_Color.r
-      value: 0.40392157
+      value: 0.49803922
       objectReference: {fileID: 0}
     - target: {fileID: 6869027552963985103, guid: f7a3f32c8f64f8641861a4b6f78cae63, type: 3}
       propertyPath: m_Pivot.x
@@ -431,6 +431,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6869027552963985100, guid: f7a3f32c8f64f8641861a4b6f78cae63, type: 3}
   m_PrefabInstance: {fileID: 265592581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &265592585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6869027552963985102, guid: f7a3f32c8f64f8641861a4b6f78cae63, type: 3}
+  m_PrefabInstance: {fileID: 265592581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265592583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &302323732
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6195a42679ff5478abed8f6a4edfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  message: {fileID: 265592585}
+  menu: {fileID: 629285478}
+  resumeButton: {fileID: 1915783413}
+  gameOver: {fileID: 888031607}
+  track: {fileID: 8300000, guid: 7dd562f8bc9c2be49b62013fad6eff15, type: 3}
+  song: {fileID: 302323733}
 --- !u!1 &506271524
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +781,8 @@ MonoBehaviour:
   menu: {fileID: 629285478}
   resumeButton: {fileID: 1915783413}
   gameOver: {fileID: 888031607}
+  track: {fileID: 8300000, guid: b547ddd597f7f1e4da9a6a9ea17b5268, type: 3}
+  song: {fileID: 302323733}
 --- !u!114 &609724271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,7 +2143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389231317010016247, guid: da2ed7c85bc5a6d42b7fb1e4faa9d58d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5389231317010016248, guid: da2ed7c85bc5a6d42b7fb1e4faa9d58d, type: 3}
       propertyPath: m_RootOrder

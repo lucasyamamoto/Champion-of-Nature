@@ -6,6 +6,8 @@ public class EndGame : MonoBehaviour
 {
     [SerializeField] private CharacterHP playerHP;
     [SerializeField] private GameObject menu, resumeButton, gameOver;
+    public AudioClip track;
+    public AudioSource song;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,9 @@ public class EndGame : MonoBehaviour
         {
             Time.timeScale = 0f;
             resumeButton.SetActive(false);
+            song.Stop();
+            song.clip = track;
+            song.Play();
             menu.SetActive(true);
             gameOver.SetActive(true);
         }
