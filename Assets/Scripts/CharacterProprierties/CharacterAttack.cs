@@ -15,8 +15,23 @@ public class CharacterAttack : MonoBehaviour
 
     public bool Block { get => blockAttack; set => blockAttack = value; }
 
-    public CharacterSkill ElementalSkill1 { get => elementalSkill1; set => elementalSkill1 = value; }
-    public CharacterSkill ElementalSkill2 { get => elementalSkill2; set => elementalSkill2 = value; }
+    public CharacterSkill ElementalSkill1 {
+        get => elementalSkill1;
+        set
+        {
+            elementalSkill1 = value;
+            ActivateBracelet1();
+        }
+    }
+    public CharacterSkill ElementalSkill2
+    {
+        get => elementalSkill2;
+        set
+        {
+            elementalSkill2 = value;
+            ActivateBracelet2();
+        }
+    }
 
     void ActivateBracelet1()
     {
