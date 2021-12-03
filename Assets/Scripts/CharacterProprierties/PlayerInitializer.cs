@@ -49,6 +49,8 @@ public class PlayerInitializer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerSkills.skill1 = (PlayerSkills.Element)SOManager.GetSkill1();
+        playerSkills.skill2 = (PlayerSkills.Element)SOManager.GetSkill2();
         characterAttack = GetComponent<CharacterAttack>();
         SetSkill();
     }

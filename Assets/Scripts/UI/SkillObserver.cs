@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+
 public class SkillObserver : MonoBehaviour
 {
     [SerializeField] private Toggle aquaslide, stoneshield, firedart, windstep;
@@ -33,6 +34,7 @@ public class SkillObserver : MonoBehaviour
     public void SkillSetter(){
         playerskills.skill2 = elements.Pop();
         playerskills.skill1 = elements.Pop();
+        SOManager.GetInstance().Save(playerskills);
     }
     public void OnToggleChanged(int Entrada)
     {   
