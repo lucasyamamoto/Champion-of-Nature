@@ -18,6 +18,7 @@ public class EndGame : MonoBehaviour
     {
         if (playerHP.Health == 0)
         {
+            Time.timeScale = 0f;
             resumeButton.SetActive(false);
             menu.SetActive(true);
             gameOver.SetActive(true);
