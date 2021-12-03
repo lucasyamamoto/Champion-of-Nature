@@ -15,7 +15,7 @@ public class Goal : MonoBehaviour
     {
         resumeButton.SetActive(false);
         message.color = new Color(0, 0, 127);
-        message.text = "CONGRATULATIONS";
+        message.text = "<b>CONGRATULATIONS</b>";
         song.Stop();
         song.clip = track;
         Time.timeScale = 0f;

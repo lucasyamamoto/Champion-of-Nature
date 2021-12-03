@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterHP : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private bool destroyOnDeath;
+    public UnityEvent onChangeHealth, onDie;
 
     public float Health
     {
@@ -17,11 +19,14 @@ public class CharacterHP : MonoBehaviour
             {
                 health = 0;
                 gameObject.SetActive(false);
-                if(destroyOnDeath)
+                if (destroyOnDeath)
                 {
                     Destroy(gameObject);
                 }
+                onDie.Invoke();
             }
+
+            onChangeHealth.Invoke();
         }
     }
 

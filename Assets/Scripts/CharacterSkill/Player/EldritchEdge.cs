@@ -27,6 +27,6 @@ public class EldritchEdge : CharacterSkill
         {
             animator.SetTrigger("Attacking");
         }
-        characterMovement.Block = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Sword_Attack");
+        // characterMovement.Block = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Sword_Attack");
     }
 }
