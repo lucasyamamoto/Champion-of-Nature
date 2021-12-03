@@ -1265,6 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundOn: {fileID: 743340063}
   SoundOff: {fileID: 1757740556}
+  volumeManager: {fileID: 1860889612}
 --- !u!1 &448905982
 GameObject:
   m_ObjectHideFlags: 0
