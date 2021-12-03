@@ -22,21 +22,13 @@ public class Stoneshield : CharacterSkill
         shieldRight.SetActive(false);
         shieldRight.transform.parent = this.transform;
 
-        Vector3 leftPosition = transform.position + shieldPrefab.transform.localPosition * transform.localScale.x;
-        leftPosition.y -= 2 * shieldPrefab.transform.localPosition.y;
-        shieldLeft = Instantiate(shieldPrefab, leftPosition, shieldPrefab.transform.rotation);
-        shieldLeft.SetActive(false);
-        shieldLeft.transform.Rotate(0f, 180f, 0f);
-        shieldLeft.transform.parent = this.transform;
-
         currentInput = new InputManager.KeyStatus();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameObject currentShield = (transform.rotation.eulerAngles.y == 0f) ? shieldRight : shieldLeft;
-        currentShield.gameObject.SetActive(currentInput.key);
+        shieldRight.gameObject.SetActive(currentInput.key);
         characterMovement.Block = currentInput.key;
         animator.SetBool("Shielding", currentInput.key);
     }
