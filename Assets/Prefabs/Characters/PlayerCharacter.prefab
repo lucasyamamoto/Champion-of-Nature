@@ -377,7 +377,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956241895037476420}
-  m_LocalRotation: {x: -0, y: -0, z: -0.20479427, w: 0.978805}
+  m_LocalRotation: {x: -0, y: -0, z: -0.20479506, w: 0.97880495}
   m_LocalPosition: {x: 0.897, y: -0.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -501,7 +501,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956241895095503682}
-  m_LocalRotation: {x: 0, y: 0, z: 0.3651995, w: 0.9309293}
+  m_LocalRotation: {x: 0, y: 0, z: 0.3652002, w: 0.93092906}
   m_LocalPosition: {x: 1.0041773, y: -0.008642316, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -785,7 +785,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956241895552063769}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9083788, w: 0.4181484}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9083788, w: 0.41814837}
   m_LocalPosition: {x: 1.3472424, y: 0.15253723, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1373,6 +1373,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   destroyOnDeath: 0
+  invincibilityDuration: 1.5
+  onChangeHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2168805066722076493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,7 +1521,7 @@ MonoBehaviour:
   - {fileID: 4956241895095503693}
   m_Bounds:
     m_Center: {x: -0.045624733, y: 0.38493562, z: 0}
-    m_Extent: {x: 1.2427218, y: 2.180972, z: 0}
+    m_Extent: {x: 1.2427213, y: 2.180972, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!95 &4956241896967052554

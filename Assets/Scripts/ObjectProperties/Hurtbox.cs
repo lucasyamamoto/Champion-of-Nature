@@ -112,6 +112,12 @@ public class Hurtbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // If character is invincible, do nothing
+        if (characterHP.Invincible)
+        {
+            return;
+        }
+
         // Check if this hurtbox collided with an hitbox
         Hitbox hitbox = other.gameObject.GetComponent<Hitbox>();
         if(hitbox && characterHP && !superKnockback)
@@ -128,6 +134,7 @@ public class Hurtbox : MonoBehaviour
                 score.AddScore();
             }
 
+            // Get knocked back
             if (transform.parent.gameObject.activeSelf)
             {
                 float reference = (other.transform.parent) ? other.transform.parent.position.x : other.transform.position.x;
@@ -137,6 +144,7 @@ public class Hurtbox : MonoBehaviour
         }
         else
         {
+            // Get super knocked back
             Knockback knockComponent = other.gameObject.GetComponent<Knockback>();
             if (knockComponent && transform.parent.gameObject.activeSelf)
             {
